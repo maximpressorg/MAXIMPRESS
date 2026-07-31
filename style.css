@@ -1467,3 +1467,185 @@ footer{border-top:1px solid #2a2a2a;padding:18px 0;background:#020304}
     margin-top: 22px;
   }
 }
+
+/* =========================================================
+   VERSION 7.6 — DESKTOP-LIKE MOBILE FEATURE LAYOUT
+   Keep two feature points on the first row and center the third
+   on the second row. Desktop and tablet layouts are unchanged.
+========================================================= */
+@media (max-width: 600px) {
+  .mini-features {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+    row-gap: 13px;
+    width: 100%;
+    max-width: 390px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mini-features > div {
+    justify-content: center;
+    gap: 7px;
+    font-size: 12px;
+    line-height: 1.25;
+    white-space: nowrap;
+  }
+
+  .mini-features > div:nth-child(3) {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+
+  .mini-features br {
+    display: none;
+  }
+
+  .mini-features .icon {
+    flex: 0 0 auto;
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 380px) {
+  .mini-features {
+    column-gap: 6px;
+  }
+
+  .mini-features > div {
+    gap: 5px;
+    font-size: 11px;
+  }
+
+  .mini-features .icon {
+    font-size: 20px;
+  }
+}
+
+/* =========================================================
+   VERSION 7.7 — DESKTOP-STYLE HOMEPAGE HERO ON MOBILE
+   Preserve the desktop hero composition on phone screens:
+   copy on the left, logo on the right, and three features in
+   one row. Desktop and non-homepage layouts remain unchanged.
+========================================================= */
+@media (max-width: 600px) {
+  .hero .hero-grid {
+    grid-template-columns: minmax(0, 1.18fr) minmax(118px, .82fr);
+    align-items: center;
+    gap: 8px;
+    padding: 24px 0 28px;
+  }
+
+  .hero .hero-copy {
+    text-align: left;
+    min-width: 0;
+  }
+
+  .hero .hero-art {
+    order: initial;
+    height: 210px;
+    margin: 0;
+    min-width: 0;
+  }
+
+  .hero .hero-main-logo {
+    width: min(165px, 100%);
+  }
+
+  .hero .hero-logo-halo {
+    width: 175px;
+    height: 175px;
+  }
+
+  .hero h1 {
+    font-size: clamp(25px, 7.2vw, 32px);
+    line-height: 1.04;
+    letter-spacing: -1px;
+  }
+
+  .hero .hero-copy > p {
+    max-width: none;
+    margin-top: 10px;
+    font-size: clamp(10px, 2.8vw, 13px);
+    line-height: 1.45;
+  }
+
+  .hero .mini-features {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    width: 100%;
+    max-width: none;
+    margin: 14px 0 0;
+  }
+
+  .hero .mini-features > div,
+  .hero .mini-features > div:nth-child(3) {
+    display: flex;
+    grid-column: auto;
+    justify-content: flex-start;
+    justify-self: auto;
+    gap: 4px;
+    min-width: 0;
+    font-size: clamp(7px, 1.9vw, 9px);
+    line-height: 1.15;
+    white-space: normal;
+  }
+
+  .hero .mini-features br {
+    display: initial;
+  }
+
+  .hero .mini-features .icon {
+    font-size: clamp(14px, 4vw, 18px);
+  }
+
+  .hero .hero-buttons {
+    align-items: flex-start;
+    margin-top: 16px;
+  }
+
+  .hero .primary-btn {
+    width: 100%;
+    min-width: 0;
+    height: 45px;
+    padding: 0 10px;
+    font-size: clamp(9px, 2.45vw, 12px);
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .hero .primary-btn b {
+    margin-left: 8px;
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero .hero-grid {
+    grid-template-columns: minmax(0, 1.2fr) minmax(104px, .8fr);
+    gap: 5px;
+  }
+
+  .hero .hero-art {
+    height: 185px;
+  }
+
+  .hero .hero-main-logo {
+    width: min(145px, 100%);
+  }
+
+  .hero .hero-logo-halo {
+    width: 155px;
+    height: 155px;
+  }
+
+  .hero .mini-features {
+    gap: 5px;
+  }
+}
