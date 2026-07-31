@@ -1400,3 +1400,20 @@ footer{border-top:1px solid #2a2a2a;padding:18px 0;background:#020304}
     bottom:70px;
   }
 }
+
+/* =========================================================
+   VERSION 7.4 — MOBILE HERO LOGO POSITION
+   Keep the desktop hero unchanged; place the main logo before
+   the hero copy and free-trial button on phone-sized screens.
+========================================================= */
+@media (max-width: 600px) {
+  .hero-grid {
+    padding-top: 22px;
+  }
+
+  .hero-art {
+    order: -1;
+    height: 300px;
+    margin-bottom: -8px;
+  }
+}
