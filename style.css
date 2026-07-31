@@ -1907,3 +1907,92 @@ footer{border-top:1px solid #2a2a2a;padding:18px 0;background:#020304}
     line-height: 1.4;
   }
 }
+
+/* =========================================================
+   VERSION 8.0 — MOBILE SERVICE PLANS: ONE CARD PER ROW
+   Service detail pages only. Desktop and main Services grid unchanged.
+========================================================= */
+@media (max-width: 650px) {
+  /* X, Instagram, TikTok and YouTube plan cards */
+  .monetization-grid,
+  .growth-grid,
+  .instagram-pricing-grid {
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    max-width: 410px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 13px;
+  }
+
+  .pricing-card {
+    width: 100%;
+    padding: 17px 16px 15px;
+    border-radius: 15px;
+  }
+
+  .pricing-card h3 {
+    font-size: 17px;
+    margin-bottom: 8px;
+  }
+
+  .pricing-card .price,
+  .pricing-card .monthly-price {
+    font-size: 31px;
+    margin-bottom: 9px;
+  }
+
+  .pricing-card .feature-list {
+    margin-top: 9px;
+    margin-bottom: 11px;
+  }
+
+  .pricing-card .feature-list li,
+  .pricing-card .plan-summary {
+    font-size: 9.5px;
+    line-height: 1.38;
+  }
+
+  .pricing-card .trial-btn {
+    min-height: 40px;
+    padding: 9px 12px;
+  }
+
+  /* Custom Social Intelligence sections */
+  .single-service-columns {
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    max-width: 410px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 13px;
+  }
+
+  .single-service-columns section {
+    padding: 16px 15px;
+  }
+
+  /* Website Development plans */
+  .webdev-grid {
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    max-width: 410px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 13px;
+  }
+
+  .webdev-card {
+    padding: 17px 16px;
+    border-radius: 15px;
+  }
+
+  .webdev-card h2 {
+    font-size: 18px;
+  }
+
+  .webdev-price strong,
+  .consultation-price strong {
+    font-size: 31px;
+  }
+}
