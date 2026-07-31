@@ -1417,3 +1417,53 @@ footer{border-top:1px solid #2a2a2a;padding:18px 0;background:#020304}
     margin-bottom: -8px;
   }
 }
+
+/* =========================================================
+   VERSION 7.5 — COMPACT MOBILE HOMEPAGE HERO
+   Reduce the first-screen height on phones only.
+   Desktop and tablet layouts remain unchanged.
+========================================================= */
+@media (max-width: 600px) {
+  .hero-grid {
+    padding: 14px 0 28px;
+    gap: 4px;
+  }
+
+  .hero-art {
+    height: 190px;
+    margin-bottom: 2px;
+  }
+
+  .hero-main-logo {
+    width: min(170px, 55vw);
+  }
+
+  .hero-logo-halo {
+    width: 188px;
+    height: 188px;
+  }
+
+  .hero h1 {
+    font-size: 35px;
+    line-height: 1.08;
+  }
+
+  .hero-copy > p {
+    margin-top: 14px;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .mini-features {
+    margin-top: 18px;
+    gap: 12px;
+  }
+
+  .mini-features > div {
+    min-width: 0;
+  }
+
+  .hero-buttons {
+    margin-top: 22px;
+  }
+}
