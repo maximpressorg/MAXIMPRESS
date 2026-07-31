@@ -1649,3 +1649,221 @@ footer{border-top:1px solid #2a2a2a;padding:18px 0;background:#020304}
     gap: 5px;
   }
 }
+
+/* =========================================================
+   VERSION 7.8 — TWO-COLUMN MOBILE CARD LAYOUTS
+   Keep service and audience cards two per row on phone screens.
+   Desktop layouts remain unchanged.
+========================================================= */
+@media (max-width: 650px) {
+  /* Homepage: Who We Help */
+  .help-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .help-grid article {
+    min-width: 0;
+    padding: 16px 8px;
+    border: 1px solid #23262c;
+    border-radius: 14px;
+    background: rgba(255,255,255,.018);
+  }
+
+  .help-grid article:last-child {
+    grid-column: 1 / -1;
+    width: calc(50% - 7px);
+    justify-self: center;
+  }
+
+  .help-icon {
+    height: 44px;
+    font-size: 34px;
+  }
+
+  .help-grid h3 {
+    font-size: 12px;
+    line-height: 1.35;
+  }
+
+  /* Main Services page */
+  .platform-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .platform-card {
+    min-height: 360px;
+    padding: 24px 12px 22px;
+    border-radius: 16px;
+  }
+
+  .platform-logo {
+    min-height: 112px;
+  }
+
+  .platform-logo img {
+    max-width: 92px;
+    max-height: 92px;
+  }
+
+  .youtube-logo-wrap img {
+    width: 105px;
+    height: 105px;
+  }
+
+  .intelligence-card-image {
+    height: 105px;
+    margin-bottom: 16px;
+  }
+
+  .platform-card h2 {
+    font-size: 18px;
+    line-height: 1.18;
+  }
+
+  .platform-line {
+    width: 38px;
+    margin: 12px 0 15px;
+  }
+
+  .platform-card p {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  /* X, Instagram, TikTok and YouTube plans */
+  .monetization-grid,
+  .growth-grid,
+  .instagram-pricing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: none;
+    gap: 14px;
+  }
+
+  .pricing-card {
+    min-width: 0;
+    padding: 20px 13px 16px;
+    border-radius: 15px;
+  }
+
+  .pricing-card h3 {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+
+  .pricing-card .price,
+  .pricing-card .monthly-price {
+    font-size: 34px;
+  }
+
+  .pricing-card .price small,
+  .pricing-card .monthly-price small {
+    font-size: 10px;
+  }
+
+  .pricing-card .feature-list li,
+  .pricing-card .plan-summary {
+    font-size: 11px;
+    line-height: 1.45;
+  }
+
+  .pricing-card .feature-list li {
+    padding-left: 20px;
+  }
+
+  .pricing-card .trial-btn {
+    min-height: 43px;
+    padding: 10px 8px;
+    font-size: 10px;
+    text-align: center;
+  }
+
+  .popular-badge {
+    min-width: 118px;
+    padding: 7px 10px;
+    font-size: 9px;
+  }
+
+  /* Custom Social Intelligence */
+  .single-service-columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .single-service-columns section {
+    min-width: 0;
+    padding: 18px 12px;
+  }
+
+  .single-service-columns h3 {
+    font-size: 17px;
+    line-height: 1.25;
+  }
+
+  .single-service-columns p,
+  .single-service-columns li {
+    font-size: 11px;
+    line-height: 1.45;
+  }
+
+  .single-service-columns li {
+    padding-left: 20px;
+  }
+
+  /* Website Development */
+  .webdev-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .webdev-card {
+    min-width: 0;
+    padding: 20px 13px;
+  }
+
+  .webdev-card h2 {
+    font-size: 19px;
+  }
+
+  .webdev-card-top > p,
+  .webdev-card li,
+  .webdev-warning {
+    font-size: 11px;
+    line-height: 1.45;
+  }
+
+  .webdev-card li {
+    padding-left: 20px;
+  }
+
+  .webdev-price strong,
+  .consultation-price strong {
+    font-size: 34px;
+  }
+
+  .webdev-button {
+    padding: 11px 8px !important;
+    font-size: 10px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .platform-grid,
+  .monetization-grid,
+  .growth-grid,
+  .instagram-pricing-grid,
+  .single-service-columns,
+  .webdev-grid {
+    gap: 10px;
+  }
+
+  .platform-card,
+  .pricing-card,
+  .single-service-columns section,
+  .webdev-card {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
