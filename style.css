@@ -1996,3 +1996,21 @@ footer{border-top:1px solid #2a2a2a;padding:18px 0;background:#020304}
     font-size: 31px;
   }
 }
+
+/* Version 8.1: compact service-card text on mobile only */
+@media (max-width: 620px) {
+  .x-services-page .pricing-card .feature-list li,
+  .instagram-services-page .pricing-card .feature-list li,
+  .tiktok-services-page .pricing-card .feature-list li,
+  .youtube-services-page .pricing-card .feature-list li {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .instagram-services-page .pricing-card .plan-summary,
+  .tiktok-services-page .pricing-card .plan-summary,
+  .youtube-services-page .pricing-card .plan-summary {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+}
