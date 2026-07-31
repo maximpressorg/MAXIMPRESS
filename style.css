@@ -2014,3 +2014,20 @@ footer{border-top:1px solid #2a2a2a;padding:18px 0;background:#020304}
     line-height: 1.5;
   }
 }
+
+/* Version 8.2: clearer spacing between mobile check icons and feature text */
+@media (max-width: 620px) {
+  .x-services-page .pricing-card .feature-list li,
+  .instagram-services-page .pricing-card .feature-list li,
+  .tiktok-services-page .pricing-card .feature-list li,
+  .youtube-services-page .pricing-card .feature-list li {
+    padding-left: 42px;
+  }
+
+  .x-services-page .pricing-card .feature-list li::before,
+  .instagram-services-page .pricing-card .feature-list li::before,
+  .tiktok-services-page .pricing-card .feature-list li::before,
+  .youtube-services-page .pricing-card .feature-list li::before {
+    left: 5px;
+  }
+}
