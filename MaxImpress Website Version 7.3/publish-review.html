@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Publish Your Review | MaxImpress</title>
+<meta content="Share your MaxImpress service experience." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body class="review-submit-page">
+<header class="header">
+<div class="container nav">
+<a aria-label="MaxImpress home" class="brand" href="index.html">
+<img alt="MaxImpress logo" class="brand-logo" src="images/maximpress-logo.png"/>
+<span class="brand-copy"><span class="brand-name">Max<span>Impress</span><sup>™</sup></span><small>DIGITAL GROWTH PARTNERS</small></span>
+</a>
+<button aria-expanded="false" aria-label="Open menu" class="menu-btn"><span></span><span></span><span></span></button>
+<nav aria-label="Primary navigation" class="nav-links services-nav"><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About Us</a></nav>
+</div>
+</header>
+
+<main class="review-submit-main">
+<section class="review-submit-section">
+<div class="review-detail-orb review-detail-orb-one"></div><div class="review-detail-orb review-detail-orb-two"></div>
+<div class="container review-submit-container">
+<a class="review-back-link" href="reviews.html">← Back to Reviews</a>
+<div class="review-submit-card">
+<span class="about-label">SHARE YOUR EXPERIENCE</span>
+<h1>Publish Your Review</h1>
+<p class="review-submit-intro">Tell us about your experience with MaxImpress. Your review will be checked before it appears publicly.</p>
+<form action="review-thank-you.html" method="get" class="review-form">
+<div class="review-photo-field">
+<label for="client-photo" class="review-photo-upload"><span class="review-photo-plus">+</span><strong>Upload a photo that represents you best</strong><small>JPG, PNG or WEBP</small></label>
+<input id="client-photo" name="client-photo" type="file" accept="image/jpeg,image/png,image/webp"/>
+</div>
+<div class="review-form-field"><label for="review-name">Name</label><input id="review-name" name="name" type="text" required autocomplete="name"/></div>
+<div class="review-form-field"><label for="review-profession">Your Profession</label><input id="review-profession" name="profession" type="text" required/></div>
+<div class="review-form-field"><label for="review-service">Which Service You Acquired</label><select id="review-service" name="service" required><option value="" selected disabled>Select a service</option><option>X Support</option><option>Instagram</option><option>TikTok</option><option>YouTube</option><option>Website Development</option><option>Custom Social Intelligence</option></select></div>
+<div class="review-form-field"><label for="review-text">Your Honest Review</label><textarea id="review-text" name="review" rows="7" required></textarea></div>
+<div class="review-photo-field result-photo-field">
+<label for="result-photo" class="review-photo-upload"><span class="review-photo-plus">+</span><strong>Result Achieved <em>(Optional)</em></strong><small>Upload a screenshot or image of your result</small></label>
+<input id="result-photo" name="result-photo" type="file" accept="image/jpeg,image/png,image/webp"/>
+</div>
+<button class="review-publish-button" type="submit">Publish</button>
+</form>
+</div>
+</div>
+</section>
+</main>
+
+<footer><div class="container footer-row"><a class="brand footer-brand" href="index.html"><img alt="MaxImpress logo" class="brand-logo" src="images/maximpress-logo.png"/><span class="brand-copy"><span class="brand-name">Max<span>Impress</span><sup>™</sup></span><small>DIGITAL GROWTH PARTNERS</small></span></a><p>© 2026 MaxImpress. All Rights Reserved.</p><nav><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About Us</a></nav></div></footer>
+<script src="script.js"></script>
+<a class="floating-contact-btn" href="https://x.com/MAXIMPRESSocial" target="_blank" rel="noopener noreferrer" aria-label="Contact MaxImpress on X">Contact Us</a>
+
+</body>
+</html>
