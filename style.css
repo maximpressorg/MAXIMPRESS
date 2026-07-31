@@ -1867,3 +1867,43 @@ footer{border-top:1px solid #2a2a2a;padding:18px 0;background:#020304}
     padding-right: 10px;
   }
 }
+
+/* =========================================================
+   VERSION 7.9 — MOBILE CTA CLICK FIX + COMPACT PLAN COPY
+   Mobile-only changes. Desktop remains unchanged.
+========================================================= */
+@media (max-width: 650px) {
+  /* Keep decorative hero artwork from covering the CTA. */
+  .hero .hero-copy {
+    position: relative;
+    z-index: 5;
+  }
+
+  .hero .hero-buttons,
+  .hero .combined-services-btn {
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
+  }
+
+  .hero .hero-art,
+  .hero .hero-art * {
+    pointer-events: none;
+  }
+
+  /* Slightly smaller descriptive copy inside service plans only. */
+  .pricing-card .plan-summary,
+  .pricing-card .feature-list li {
+    font-size: 9.5px;
+    line-height: 1.4;
+  }
+
+  .single-service-columns p,
+  .single-service-columns li,
+  .webdev-card-top > p,
+  .webdev-card li,
+  .webdev-warning {
+    font-size: 9.5px;
+    line-height: 1.4;
+  }
+}
