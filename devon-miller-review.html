@@ -28,7 +28,6 @@
 <div class="container review-detail-container">
 <a class="review-back-link" href="reviews.html">← Back to All Reviews</a>
 <article class="review-detail-card">
-
 <header class="review-detail-header">
 <img alt="Devon Miller" class="review-detail-photo" src="images/review-devon-miller.jpg"/>
 <div class="review-detail-identity">
@@ -49,7 +48,55 @@
 </main>
 <footer><div class="container footer-row"><a class="brand footer-brand" href="index.html"><img alt="MaxImpress logo" class="brand-logo" src="images/maximpress-logo.png"/><span class="brand-copy"><span class="brand-name">Max<span>Impress</span><sup>™</sup></span><small>DIGITAL GROWTH PARTNERS</small></span></a><p>© 2026 MaxImpress. All Rights Reserved.</p><nav><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About Us</a></nav></div></footer>
 <script src="script.js"></script>
-<a class="floating-contact-btn" href="https://x.com/messages/compose?screen_name=MAXIMPRESSocial" target="_blank" rel="noopener noreferrer" aria-label="Contact MaxImpress on X">Contact Us</a>
-
-</body>
+<a aria-label="Contact MaxImpress on X" class="floating-contact-btn" href="https://twitter.com/messages/compose?recipient_id=1582710858614018050" onclick="return openMaxImpressDM('');" rel="noopener noreferrer" target="_top">Contact Us</a>
+<script>function showMaxImpressDMNotice(message) {
+  var old = document.getElementById('maximpress-dm-notice');
+  if (old) old.remove();
+  var notice = document.createElement('div');
+  notice.id = 'maximpress-dm-notice';
+  notice.className = 'maximpress-dm-notice';
+  notice.setAttribute('role', 'status');
+  notice.textContent = message;
+  document.body.appendChild(notice);
+  requestAnimationFrame(function(){ notice.classList.add('show'); });
+}
+function copyMaxImpressPlanMessage(message) {
+  function fallbackCopy() {
+    try {
+      var area = document.createElement('textarea');
+      area.value = message;
+      area.setAttribute('readonly', '');
+      area.style.position = 'fixed';
+      area.style.opacity = '0';
+      area.style.pointerEvents = 'none';
+      document.body.appendChild(area);
+      area.select();
+      area.setSelectionRange(0, area.value.length);
+      var ok = document.execCommand('copy');
+      area.remove();
+      return ok;
+    } catch (e) { return false; }
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    return navigator.clipboard.writeText(message).then(function(){ return true; }).catch(function(){ return fallbackCopy(); });
+  }
+  return Promise.resolve(fallbackCopy());
+}
+function openMaxImpressDM(message) {
+  var base = 'https://twitter.com/messages/compose?recipient_id=1582710858614018050';
+  var url = message ? base + '&text=' + encodeURIComponent(message) : base;
+  function go() {
+    try { window.top.location.href = url; }
+    catch (e) { window.location.href = url; }
+  }
+  if (!message) {
+    go();
+    return false;
+  }
+  copyMaxImpressPlanMessage(message).then(function(copied){
+    showMaxImpressDMNotice(copied ? 'Plan message copied — paste it in the X DM if needed.' : 'Opening X DM — the plan message is also included in the link.');
+    window.setTimeout(go, 700);
+  });
+  return false;
+}</script></body>
 </html>

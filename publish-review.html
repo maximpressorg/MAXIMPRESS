@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -21,7 +22,6 @@
 <nav aria-label="Primary navigation" class="nav-links services-nav"><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About Us</a></nav>
 </div>
 </header>
-
 <main class="review-submit-main">
 <section class="review-submit-section">
 <div class="review-detail-orb review-detail-orb-one"></div><div class="review-detail-orb review-detail-orb-two"></div>
@@ -31,29 +31,29 @@
 <span class="about-label">SHARE YOUR EXPERIENCE</span>
 <h1>Publish Your Review</h1>
 <p class="review-submit-intro">Tell us about your experience with MaxImpress. Choose the rating that honestly matches your experience; a positive rating is not required.</p>
-<form action="review-thank-you.html" method="get" class="review-form">
+<form action="review-thank-you.html" class="review-form" method="get">
 <div class="review-photo-field">
-<label for="client-photo" class="review-photo-upload"><span class="review-photo-plus">+</span><strong>Upload a photo that represents you best</strong><small>JPG, PNG or WEBP</small></label>
-<input id="client-photo" name="client-photo" type="file" accept="image/jpeg,image/png,image/webp"/>
+<label class="review-photo-upload" for="client-photo"><span class="review-photo-plus">+</span><strong>Upload a photo that represents you best</strong><small>JPG, PNG or WEBP</small></label>
+<input accept="image/jpeg,image/png,image/webp" id="client-photo" name="client-photo" type="file"/>
 </div>
-<div class="review-form-field"><label for="review-name">Name</label><input id="review-name" name="name" type="text" required autocomplete="name"/></div>
-<div class="review-form-field"><label for="review-profession">Your Profession</label><input id="review-profession" name="profession" type="text" required/></div>
-<div class="review-form-field"><label for="review-service">Which Service You Acquired</label><select id="review-service" name="service" required><option value="" selected disabled>Select a service</option><option>Launch Your Digital Identity</option><option>X Support</option><option>Instagram</option><option>TikTok</option><option>YouTube</option><option>Website Development</option><option>Custom Social Intelligence</option></select></div>
+<div class="review-form-field"><label for="review-name">Name</label><input autocomplete="name" id="review-name" name="name" required="" type="text"/></div>
+<div class="review-form-field"><label for="review-profession">Your Profession</label><input id="review-profession" name="profession" required="" type="text"/></div>
+<div class="review-form-field"><label for="review-service">Which Service You Acquired</label><select id="review-service" name="service" required=""><option disabled="" selected="" value="">Select a service</option><option>Launch Your Digital Identity</option><option>X Support</option><option>Instagram</option><option>TikTok</option><option>YouTube</option><option>Website Development</option><option>Custom Social Intelligence</option></select></div>
 <fieldset class="review-rating-field">
 <legend>Your Rating</legend>
-<div class="review-star-rating" role="radiogroup" aria-label="Choose a rating from 1 to 5 stars">
-<input type="radio" id="rating-5" name="rating" value="5" required/><label for="rating-5" title="5 stars" aria-label="5 stars">★</label>
-<input type="radio" id="rating-4" name="rating" value="4"/><label for="rating-4" title="4 stars" aria-label="4 stars">★</label>
-<input type="radio" id="rating-3" name="rating" value="3"/><label for="rating-3" title="3 stars" aria-label="3 stars">★</label>
-<input type="radio" id="rating-2" name="rating" value="2"/><label for="rating-2" title="2 stars" aria-label="2 stars">★</label>
-<input type="radio" id="rating-1" name="rating" value="1"/><label for="rating-1" title="1 star" aria-label="1 star">★</label>
+<div aria-label="Choose a rating from 1 to 5 stars" class="review-star-rating" role="radiogroup">
+<input id="rating-5" name="rating" required="" type="radio" value="5"/><label aria-label="5 stars" for="rating-5" title="5 stars">★</label>
+<input id="rating-4" name="rating" type="radio" value="4"/><label aria-label="4 stars" for="rating-4" title="4 stars">★</label>
+<input id="rating-3" name="rating" type="radio" value="3"/><label aria-label="3 stars" for="rating-3" title="3 stars">★</label>
+<input id="rating-2" name="rating" type="radio" value="2"/><label aria-label="2 stars" for="rating-2" title="2 stars">★</label>
+<input id="rating-1" name="rating" type="radio" value="1"/><label aria-label="1 star" for="rating-1" title="1 star">★</label>
 </div>
 <small>1 star = poor experience · 5 stars = excellent experience</small>
 </fieldset>
-<div class="review-form-field"><label for="review-text">Your Honest Review</label><textarea id="review-text" name="review" rows="7" required></textarea></div>
+<div class="review-form-field"><label for="review-text">Your Honest Review</label><textarea id="review-text" name="review" required="" rows="7"></textarea></div>
 <div class="review-photo-field result-photo-field">
-<label for="result-photo" class="review-photo-upload"><span class="review-photo-plus">+</span><strong>Result Achieved <em>(Optional)</em></strong><small>Upload a screenshot or image of your result</small></label>
-<input id="result-photo" name="result-photo" type="file" accept="image/jpeg,image/png,image/webp"/>
+<label class="review-photo-upload" for="result-photo"><span class="review-photo-plus">+</span><strong>Result Achieved <em>(Optional)</em></strong><small>Upload a screenshot or image of your result</small></label>
+<input accept="image/jpeg,image/png,image/webp" id="result-photo" name="result-photo" type="file"/>
 </div>
 <div class="review-policy-note" role="note">
 <strong>Please keep your review genuine.</strong>
@@ -65,10 +65,57 @@
 </div>
 </section>
 </main>
-
 <footer><div class="container footer-row"><a class="brand footer-brand" href="index.html"><img alt="MaxImpress logo" class="brand-logo" src="images/maximpress-logo.png"/><span class="brand-copy"><span class="brand-name">Max<span>Impress</span><sup>™</sup></span><small>DIGITAL GROWTH PARTNERS</small></span></a><p>© 2026 MaxImpress. All Rights Reserved.</p><nav><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About Us</a></nav></div></footer>
 <script src="script.js"></script>
-<a class="floating-contact-btn" href="https://x.com/messages/compose?screen_name=MAXIMPRESSocial" target="_blank" rel="noopener noreferrer" aria-label="Contact MaxImpress on X">Contact Us</a>
-
-</body>
+<a aria-label="Contact MaxImpress on X" class="floating-contact-btn" href="https://twitter.com/messages/compose?recipient_id=1582710858614018050" onclick="return openMaxImpressDM('');" rel="noopener noreferrer" target="_top">Contact Us</a>
+<script>function showMaxImpressDMNotice(message) {
+  var old = document.getElementById('maximpress-dm-notice');
+  if (old) old.remove();
+  var notice = document.createElement('div');
+  notice.id = 'maximpress-dm-notice';
+  notice.className = 'maximpress-dm-notice';
+  notice.setAttribute('role', 'status');
+  notice.textContent = message;
+  document.body.appendChild(notice);
+  requestAnimationFrame(function(){ notice.classList.add('show'); });
+}
+function copyMaxImpressPlanMessage(message) {
+  function fallbackCopy() {
+    try {
+      var area = document.createElement('textarea');
+      area.value = message;
+      area.setAttribute('readonly', '');
+      area.style.position = 'fixed';
+      area.style.opacity = '0';
+      area.style.pointerEvents = 'none';
+      document.body.appendChild(area);
+      area.select();
+      area.setSelectionRange(0, area.value.length);
+      var ok = document.execCommand('copy');
+      area.remove();
+      return ok;
+    } catch (e) { return false; }
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    return navigator.clipboard.writeText(message).then(function(){ return true; }).catch(function(){ return fallbackCopy(); });
+  }
+  return Promise.resolve(fallbackCopy());
+}
+function openMaxImpressDM(message) {
+  var base = 'https://twitter.com/messages/compose?recipient_id=1582710858614018050';
+  var url = message ? base + '&text=' + encodeURIComponent(message) : base;
+  function go() {
+    try { window.top.location.href = url; }
+    catch (e) { window.location.href = url; }
+  }
+  if (!message) {
+    go();
+    return false;
+  }
+  copyMaxImpressPlanMessage(message).then(function(copied){
+    showMaxImpressDMNotice(copied ? 'Plan message copied — paste it in the X DM if needed.' : 'Opening X DM — the plan message is also included in the link.');
+    window.setTimeout(go, 700);
+  });
+  return false;
+}</script></body>
 </html>

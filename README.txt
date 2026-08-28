@@ -17,3 +17,7 @@ Version 7.2 updates: fixed Contact Us button on all pages; YouTube Monetization 
 
 
 Version 8.3: Added Launch Your Digital Identity as the first service card and a complete detailed service page.
+
+Version 9.3: Choose Plan copies the exact plan-specific X DM message before opening the direct DM, with a brief confirmation notice. Contact Us behavior remains direct DM.
+
+Version 9.4: Added a discreet Choose Plan helper tooltip. Desktop shows it on hover/focus; mobile shows it on touch. It explains that X DMs open and the exact plan message is copied for pasting. No other website layout/content changed.
