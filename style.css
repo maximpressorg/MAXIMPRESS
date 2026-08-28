@@ -1093,7 +1093,7 @@ footer{border-top:1px solid #2a2a2a;padding:18px 0;background:#020304}
 .about-brand-visual { min-height:294px; position:relative; overflow:hidden; border:1px solid #3a2a49; border-radius:19px; display:flex; flex-direction:column; align-items:center; justify-content:center; background:radial-gradient(circle at 52% 45%,rgba(79,35,255,.20),transparent 30%),linear-gradient(135deg,#07090e,#0b0d14 55%,#071326); box-shadow:0 22px 55px rgba(0,0,0,.38); }
 .about-grid-pattern { position:absolute; inset:0; opacity:.17; background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px); background-size:34px 34px; mask-image:linear-gradient(90deg,transparent,black 30%,black 70%,transparent); }
 .about-visual-ring { position:relative; width:124px; height:124px; border-radius:50%; display:grid; place-items:center; border:3px solid transparent; background:linear-gradient(#090b10,#090b10) padding-box,conic-gradient(#ff2bae,#7a2cff,#0fd8ff,#ff2bae) border-box; box-shadow:0 0 28px rgba(180,44,255,.45); }
-.about-visual-ring span { font-size:69px; font-weight:800; letter-spacing:-11px; padding-right:10px; background:linear-gradient(135deg,#7139ff,#ff309b); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.about-visual-ring img { width:92px; height:92px; object-fit:contain; display:block; position:relative; z-index:1; }
 .about-visual-name { position:relative; margin-top:18px; font-size:35px; font-weight:800; }
 .about-visual-name span { color:#ff39af; }
 .about-brand-visual small { position:relative; margin-top:6px; color:#bcbcc5; font-size:9px; letter-spacing:2.3px; }
@@ -2030,4 +2030,162 @@ footer{border-top:1px solid #2a2a2a;padding:18px 0;background:#020304}
   .youtube-services-page .pricing-card .feature-list li::before {
     left: 5px;
   }
+}
+
+/* =========================================================
+   VERSION 8.3 — LAUNCH YOUR DIGITAL IDENTITY
+   New service card + detailed connected digital presence page.
+========================================================= */
+.digital-identity-card{--accent:#6e73ff;border-color:rgba(104,113,255,.55)}
+.digital-identity-card:hover{border-color:#8f68ff;box-shadow:0 22px 58px rgba(94,71,255,.22)}
+.digital-identity-card .platform-line{background:linear-gradient(90deg,#00d8ff,#7d55ff,#ff37ad);box-shadow:0 0 12px rgba(125,85,255,.7)}
+.digital-identity-card-image{width:100%;height:185px;border-radius:15px;overflow:hidden;margin-bottom:23px;border:1px solid rgba(125,85,255,.28);background:#080b14}
+.digital-identity-card-image img{width:100%;height:100%;object-fit:cover;display:block}
+
+.digital-identity-page{background:#050711;color:#fff}
+.digital-identity-main{overflow:hidden;background:radial-gradient(circle at 12% 11%,rgba(0,216,255,.08),transparent 27%),radial-gradient(circle at 88% 18%,rgba(255,55,173,.08),transparent 28%),#050711}
+.digital-identity-hero{position:relative;padding:145px 0 78px;overflow:hidden}
+.digital-orb{position:absolute;border-radius:50%;filter:blur(85px);pointer-events:none;opacity:.22}
+.digital-orb-one{width:370px;height:370px;left:-160px;top:90px;background:#5445ff}
+.digital-orb-two{width:340px;height:340px;right:-150px;top:190px;background:#ff2ea5}
+.digital-identity-hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.02fr .98fr;gap:58px;align-items:center}
+.digital-identity-copy h1{margin:16px 0 23px;font-size:clamp(49px,6vw,78px);line-height:.98;letter-spacing:-3.1px;background:linear-gradient(90deg,#fff 0%,#d9e9ff 34%,#a48cff 67%,#ff6dbd 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.digital-identity-lead{max-width:720px;color:#d8dbea;font-size:20px;line-height:1.68}
+.digital-platform-focus{display:flex;align-items:center;flex-wrap:wrap;gap:11px;margin-top:27px}
+.digital-platform-focus span{padding:9px 13px;border:1px solid rgba(133,105,255,.38);border-radius:10px;background:rgba(108,76,255,.08);color:#f2f4ff;font-size:12px;font-weight:800;letter-spacing:.25px}
+.digital-platform-focus b{color:#7fdcff;font-size:17px}
+.digital-identity-visual{position:relative;border:1px solid rgba(114,100,255,.32);border-radius:28px;overflow:hidden;background:#070b16;box-shadow:0 30px 85px rgba(0,0,0,.42),0 0 44px rgba(104,73,255,.12)}
+.digital-identity-visual img{display:block;width:100%;height:auto}
+
+.digital-intro-section{padding:28px 0 56px}
+.digital-section-heading{max-width:940px;margin:0 auto;text-align:center}
+.digital-section-heading h2{margin:13px 0 18px;font-size:clamp(35px,4.7vw,54px);line-height:1.06;letter-spacing:-1.8px}
+.digital-section-heading p{color:#b8bdcf;font-size:16px;line-height:1.78;margin:10px auto;max-width:880px}
+.digital-section-heading strong{color:#fff}
+
+.digital-pillars-section{padding:20px 0 68px}
+.digital-pillars-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:start}
+.digital-pillar-card{position:relative;min-height:100%;padding:32px 28px;border:1px solid rgba(255,255,255,.10);border-radius:24px;background:linear-gradient(150deg,rgba(16,20,39,.98),rgba(6,9,20,.99));box-shadow:0 24px 65px rgba(0,0,0,.31);overflow:hidden}
+.digital-pillar-card:before{content:"";position:absolute;inset:0;background:linear-gradient(125deg,rgba(255,255,255,.035),transparent 27%,transparent 73%,rgba(255,255,255,.018));pointer-events:none}
+.digital-pillar-card>*{position:relative;z-index:1}
+.website-pillar{border-color:rgba(0,199,255,.28)}.x-pillar{border-color:rgba(118,98,255,.30)}.meta-pillar{border-color:rgba(255,67,173,.28)}
+.digital-pillar-number{position:absolute;right:18px;top:10px;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.09);font-size:58px;font-weight:800}
+.digital-pillar-icon{display:grid;place-items:center;width:52px;height:52px;margin-bottom:18px;border-radius:15px;background:linear-gradient(135deg,rgba(0,213,255,.15),rgba(125,85,255,.19),rgba(255,55,173,.13));border:1px solid rgba(136,108,255,.32);font-size:27px;font-weight:800;color:#eaf7ff}
+.digital-pillar-card h2{font-size:26px;line-height:1.17;margin-bottom:16px}
+.digital-pillar-card>p{color:#b7bdce;font-size:14px;line-height:1.72;margin:14px 0}
+.digital-subblock{margin:20px 0;padding:19px;border:1px solid rgba(255,255,255,.07);border-radius:15px;background:rgba(255,255,255,.025)}
+.digital-subblock h3{font-size:14px;margin-bottom:12px;color:#eef1ff}
+.digital-subblock ul{list-style:none;padding:0;margin:0}
+.digital-subblock li{position:relative;padding:0 0 10px 25px;color:#cfd3df;font-size:13px;line-height:1.5}
+.digital-subblock li:last-child{padding-bottom:0}
+.digital-subblock li:before{content:"✓";position:absolute;left:0;top:0;color:#59dfff;font-weight:800}
+.meta-pillar .digital-subblock li:before{color:#ff60bc}.x-pillar .digital-subblock li:before{color:#9b81ff}
+.digital-card-objective{padding-top:15px;border-top:1px solid rgba(255,255,255,.08);color:#e7eaff!important;font-weight:600}
+.digital-growth-chain{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:7px;margin-top:21px;padding:17px 14px;border:1px solid rgba(125,102,255,.20);border-radius:14px;background:rgba(108,76,255,.06)}
+.digital-growth-chain span{font-size:10px;font-weight:800;color:#ebeaff}.digital-growth-chain i{font-style:normal;color:#816eff}
+
+.digital-system-section{padding:0 0 58px}
+.digital-system-panel{padding:40px;border:1px solid rgba(128,90,255,.26);border-radius:27px;background:radial-gradient(circle at 50% 0%,rgba(121,77,255,.13),transparent 38%),linear-gradient(145deg,rgba(13,17,33,.98),rgba(5,8,18,.99));box-shadow:0 28px 75px rgba(0,0,0,.32)}
+.compact-heading h2{font-size:clamp(32px,4vw,47px)}
+.digital-flow{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;margin:34px auto 30px}
+.digital-flow span{padding:12px 15px;border:1px solid rgba(92,206,255,.22);border-radius:12px;background:#0b1222;color:#eaf2ff;font-size:12px;font-weight:800;box-shadow:inset 0 0 18px rgba(106,82,255,.06)}
+.digital-flow i{font-style:normal;color:#947aff;font-size:20px}
+.digital-consistency-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:9px}
+.digital-consistency-grid span{padding:12px 8px;border-radius:11px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.075);text-align:center;color:#c8ccda;font-size:11px;font-weight:700}
+
+.digital-trust-section{padding:0 0 58px}
+.digital-trust-card{display:grid;grid-template-columns:auto 1fr;gap:25px;align-items:center;padding:34px 38px;border:1px solid rgba(45,208,255,.28);border-radius:23px;background:linear-gradient(120deg,rgba(0,200,255,.07),rgba(119,75,255,.08) 50%,rgba(255,52,173,.06));box-shadow:0 22px 65px rgba(0,0,0,.26)}
+.digital-trust-icon{display:grid;place-items:center;width:72px;height:72px;border-radius:22px;background:linear-gradient(135deg,#00c8ff,#735bff,#ff3ba9);font-size:34px;font-weight:800;box-shadow:0 0 30px rgba(107,89,255,.28)}
+.digital-trust-card h2{font-size:31px;margin:8px 0 9px}.digital-trust-card p{color:#c4c9d7;line-height:1.72}
+
+.digital-closing-section{padding:0 0 88px}
+.digital-closing-card{max-width:970px;padding:44px;text-align:center;border:1px solid rgba(255,75,183,.28);border-radius:27px;background:radial-gradient(circle at 50% 10%,rgba(129,74,255,.15),transparent 44%),linear-gradient(145deg,#0d1020,#070914);box-shadow:0 28px 80px rgba(0,0,0,.34)}
+.digital-closing-card h2{font-size:clamp(34px,4.4vw,52px);line-height:1.08;letter-spacing:-1.6px;margin:13px 0 17px}.digital-closing-card p{color:#bfc4d4;line-height:1.7;margin:4px 0}.digital-closing-card .consult-btn{margin-top:25px}
+
+@media(max-width:980px){
+  .digital-identity-hero-grid{grid-template-columns:1fr;gap:36px}.digital-identity-copy{text-align:center}.digital-identity-lead{margin-left:auto;margin-right:auto}.digital-platform-focus{justify-content:center}.digital-identity-visual{max-width:720px;margin:0 auto}.digital-pillars-grid{grid-template-columns:1fr;max-width:760px}.digital-consistency-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+@media(max-width:650px){
+  .digital-identity-card-image{height:105px;margin-bottom:16px}.digital-identity-hero{padding:118px 0 52px}.digital-identity-copy h1{font-size:43px;letter-spacing:-1.7px}.digital-identity-lead{font-size:15px;line-height:1.62}.digital-platform-focus{gap:7px}.digital-platform-focus span{font-size:10px;padding:7px 9px}.digital-intro-section{padding:16px 0 43px}.digital-section-heading h2{font-size:34px;letter-spacing:-1px}.digital-section-heading p{font-size:14px}.digital-pillars-section{padding-bottom:48px}.digital-pillar-card{padding:24px 19px;border-radius:19px}.digital-pillar-card h2{font-size:22px}.digital-pillar-card>p{font-size:13px}.digital-system-panel{padding:26px 17px;border-radius:20px}.digital-flow{gap:7px}.digital-flow span{font-size:10px;padding:9px 10px}.digital-flow i{font-size:15px}.digital-consistency-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.digital-trust-card{grid-template-columns:1fr;text-align:center;padding:27px 20px}.digital-trust-icon{margin:0 auto;width:62px;height:62px}.digital-trust-card h2{font-size:25px}.digital-closing-card{padding:31px 20px;border-radius:21px}.digital-closing-card h2{font-size:31px}.digital-closing-section{padding-bottom:65px}
+}
+
+
+/* =========================================================
+   VERSION 8.6 — REVIEW TRANSPARENCY & STAR RATING
+========================================================= */
+.review-standards-note{
+  margin:0 0 26px;
+  padding:18px 20px;
+  border:1px solid rgba(151,83,255,.24);
+  border-radius:16px;
+  background:rgba(122,67,255,.055);
+}
+.review-standards-note strong{display:block;margin-bottom:7px;color:#fff;font-size:14px}
+.review-standards-note p{margin:0;color:#aeb3c6;font-size:13px;line-height:1.65}
+
+.review-rating-field{margin:0;padding:0;border:0;display:grid;gap:9px}
+.review-rating-field legend{margin:0 0 2px;padding:0;color:#dfe3ef;font-size:13px;font-weight:800}
+.review-rating-field small{color:#8f95aa;font-size:12px}
+.review-star-rating{display:flex;flex-direction:row-reverse;justify-content:flex-end;gap:5px;width:max-content}
+.review-star-rating input{position:absolute;opacity:0;pointer-events:none}
+.review-star-rating label{
+  cursor:pointer;
+  color:#34394d;
+  font-size:34px;
+  line-height:1;
+  transition:color .15s ease,transform .15s ease;
+}
+.review-star-rating label:hover,
+.review-star-rating label:hover ~ label,
+.review-star-rating input:checked ~ label{color:#ffca28}
+.review-star-rating label:hover{transform:translateY(-1px)}
+.review-star-rating input:focus-visible + label{outline:2px solid #b274ff;outline-offset:4px;border-radius:4px}
+.review-policy-note{padding:16px 18px;border:1px solid rgba(255,255,255,.11);border-radius:14px;background:rgba(255,255,255,.025)}
+.review-policy-note strong{display:block;margin-bottom:6px;color:#fff;font-size:13px}
+.review-policy-note p{margin:0;color:#9ca3b7;font-size:12px;line-height:1.6}
+@media(max-width:600px){
+  .review-standards-note{padding:15px 16px;margin-bottom:20px}
+  .review-star-rating label{font-size:31px}
+}
+
+/* Version 8.7: X Original Content Rewards monetization plans */
+.x-monetization-note{
+  max-width:980px;
+  margin:-14px auto 30px;
+  padding:18px 20px;
+  border:1px solid rgba(81,150,255,.24);
+  border-radius:14px;
+  background:linear-gradient(135deg,rgba(23,75,145,.11),rgba(0,239,107,.045));
+  color:#dce6f6;
+  line-height:1.6;
+}
+.x-monetization-note strong{display:block;margin-bottom:6px;color:#fff;font-size:15px}
+.x-monetization-note p{margin:0;color:#b9c5d8;font-size:13px}
+.x-monetization-card{min-height:720px}
+.x-plan-intro{margin:-2px 0 14px;color:#c8d1df;font-size:13px;line-height:1.6}
+.x-plan-note{margin:0 0 18px;padding:12px 13px;border-left:2px solid var(--accent);border-radius:8px;background:rgba(255,255,255,.025);color:#aebacc;font-size:12px;line-height:1.55}
+@media(max-width:650px){
+  .x-monetization-note{margin:-8px auto 22px;padding:14px 15px}
+  .x-monetization-note strong{font-size:13px}
+  .x-monetization-note p{font-size:11px;line-height:1.55}
+  .x-monetization-card{min-height:0}
+  .x-monetization-card .x-plan-intro{font-size:11.5px}
+  .x-monetization-card .x-plan-note{font-size:11px}
+}
+
+/* Version 8.8: Launch Your Digital Identity service-card visual */
+.services-page .digital-identity-card-image {
+  position: relative;
+  background: #07101a;
+}
+.services-page .digital-identity-card-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(5,9,18,.04), rgba(5,9,18,.28));
+  box-shadow: inset 0 0 34px rgba(3,8,16,.22);
+}
+.services-page .digital-identity-card-image img {
+  object-position: center 56%;
 }

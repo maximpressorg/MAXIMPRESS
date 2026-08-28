@@ -14,3 +14,6 @@ Version 6.3 update:
 - Homepage primary CTA now links directly to x-support.html instead of services.html.
 
 Version 7.2 updates: fixed Contact Us button on all pages; YouTube Monetization $300/month; Standard Website Development $250 one-time; Custom Social Intelligence scope and legal/public-information clarification.
+
+
+Version 8.3: Added Launch Your Digital Identity as the first service card and a complete detailed service page.
