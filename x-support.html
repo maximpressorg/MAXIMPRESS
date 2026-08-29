@@ -200,20 +200,53 @@ function copyMaxImpressPlanMessage(message) {
   return Promise.resolve(fallbackCopy());
 }
 function openMaxImpressDM(message) {
-  var base = 'https://twitter.com/messages/compose?recipient_id=1582710858614018050';
+  var recipientId = '1582710858614018050';
+  var base = 'https://twitter.com/messages/compose?recipient_id=' + recipientId;
   var url = message ? base + '&text=' + encodeURIComponent(message) : base;
-  function go() {
-    try { window.top.location.href = url; }
-    catch (e) { window.location.href = url; }
+
+  function navigate(target) {
+    try { window.top.location.href = target; }
+    catch (e) { window.location.href = target; }
   }
-  if (!message) {
-    go();
+
+  // Keep the existing Choose Plan flow unchanged: copy the exact plan message,
+  // then open the canonical X DM URL.
+  if (message) {
+    copyMaxImpressPlanMessage(message).then(function(copied){
+      showMaxImpressDMNotice(copied ? 'Plan message copied — paste it in the X DM if needed.' : 'Opening X DM — the plan message is also included in the link.');
+      window.setTimeout(function(){ navigate(url); }, 1300);
+    });
     return false;
   }
-  copyMaxImpressPlanMessage(message).then(function(copied){
-    showMaxImpressDMNotice(copied ? 'Plan message copied — paste it in the X DM if needed.' : 'Opening X DM — the plan message is also included in the link.');
-    window.setTimeout(go, 1300);
-  });
+
+  // Contact Us on mobile: prefer the installed X application.
+  var ua = navigator.userAgent || '';
+  var isAndroid = /Android/i.test(ua);
+  var isIOS = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+  if (isAndroid) {
+    // Explicit Android app intent. If X is not installed, Android falls back to the web DM.
+    var fallback = encodeURIComponent(base);
+    var intentUrl = 'intent://twitter.com/messages/compose?recipient_id=' + recipientId +
+      '#Intent;scheme=https;package=com.twitter.android;S.browser_fallback_url=' + fallback + ';end';
+    navigate(intentUrl);
+    return false;
+  }
+
+  if (isIOS) {
+    // X still supports the legacy Twitter URL scheme for installed-app handoff.
+    // Fall back to the canonical web DM if the app cannot be opened.
+    var appUrl = 'twitter://messages/compose?recipient_id=' + recipientId;
+    var started = Date.now();
+    navigate(appUrl);
+    window.setTimeout(function(){
+      if (!document.hidden && Date.now() - started < 2200) navigate(base);
+    }, 1200);
+    return false;
+  }
+
+  // Desktop and other environments keep the already-working direct web DM.
+  navigate(base);
   return false;
 }</script></body>
 </html>
