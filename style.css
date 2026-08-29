@@ -2247,3 +2247,29 @@ footer{border-top:1px solid #2a2a2a;padding:18px 0;background:#020304}
     border-radius: 9px;
   }
 }
+
+
+/* About page benefits placement - v9.6 */
+.about-page .about-benefits-section {
+  padding-top: 34px;
+  padding-bottom: 54px;
+}
+.about-page .about-benefits-section .benefit-box {
+  margin-top: 0;
+}
+@media (max-width: 768px) {
+  .about-page .about-benefits-section {
+    padding-top: 22px;
+    padding-bottom: 38px;
+  }
+}
+
+/* Version 9.7: center the single X monetization card on desktop */
+@media (min-width: 651px) {
+  .x-services-page .monetization-grid {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
