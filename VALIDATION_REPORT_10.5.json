@@ -1,0 +1,128 @@
+{
+  "version": "10.5",
+  "status": "PASS",
+  "checks": {
+    "index.html_main_text_unchanged": true,
+    "services.html_main_text_unchanged": true,
+    "html_files": 57,
+    "missing_local_targets": [],
+    "portfolio_nav_pages": 46,
+    "portfolio_order": [
+      "About Us",
+      "Clients Reviews and Results",
+      "Contact Us",
+      "Privacy Policy"
+    ],
+    "portfolio_order_errors": [],
+    "active_articles": {
+      "x-monetization-2026.html": {
+        "words": 979,
+        "faqs": 5,
+        "official_reference_links": 3
+      },
+      "x-growth-for-monetization.html": {
+        "words": 786,
+        "faqs": 5,
+        "official_reference_links": 3
+      },
+      "x-monetization-not-working.html": {
+        "words": 681,
+        "faqs": 5,
+        "official_reference_links": 3
+      },
+      "followers-vs-impressions.html": {
+        "words": 603,
+        "faqs": 5,
+        "official_reference_links": 2
+      },
+      "x-premium-vs-premium-plus.html": {
+        "words": 638,
+        "faqs": 5,
+        "official_reference_links": 3
+      },
+      "how-to-make-money-on-x-2026.html": {
+        "words": 754,
+        "faqs": 5,
+        "official_reference_links": 3
+      },
+      "x-earnings-payouts.html": {
+        "words": 640,
+        "faqs": 5,
+        "official_reference_links": 3
+      },
+      "x-monetization-updates.html": {
+        "words": 658,
+        "faqs": 5,
+        "official_reference_links": 3
+      },
+      "meta-growth-2026.html": {
+        "words": 652,
+        "faqs": 5,
+        "official_reference_links": 2
+      },
+      "meta-content-strategy.html": {
+        "words": 676,
+        "faqs": 5,
+        "official_reference_links": 2
+      },
+      "meta-reach-not-working.html": {
+        "words": 588,
+        "faqs": 5,
+        "official_reference_links": 2
+      },
+      "meta-business-suite-access.html": {
+        "words": 574,
+        "faqs": 5,
+        "official_reference_links": 1
+      },
+      "business-website-guide.html": {
+        "words": 656,
+        "faqs": 5,
+        "official_reference_links": 3
+      },
+      "website-redesign-vs-new.html": {
+        "words": 619,
+        "faqs": 5,
+        "official_reference_links": 3
+      },
+      "website-before-paid-traffic.html": {
+        "words": 683,
+        "faqs": 5,
+        "official_reference_links": 3
+      },
+      "build-personal-digital-presence.html": {
+        "words": 428,
+        "faqs": 4,
+        "official_reference_links": 0
+      },
+      "personal-portfolio-essentials.html": {
+        "words": 404,
+        "faqs": 4,
+        "official_reference_links": 0
+      },
+      "personal-brand-vs-business-brand.html": {
+        "words": 391,
+        "faqs": 4,
+        "official_reference_links": 0
+      }
+    },
+    "source_document_mentions_in_articles": [],
+    "javascript_syntax": "PASS",
+    "browser_interaction_test": {
+      "desktop_hover_opens": true,
+      "desktop_first_click_pins_open": true,
+      "desktop_second_click_closes_while_pointer_remains": true,
+      "desktop_rehover_opens_after_leave": true,
+      "mobile_articles_toggle": true,
+      "mobile_nested_x_category_toggle": true,
+      "tested_viewports_for_mega_menu": [
+        "1440x900",
+        "1200x800",
+        "1024x768",
+        "901x700"
+      ],
+      "mega_menu_and_view_all_fit_in_all_tested_viewports": true
+    }
+  },
+  "errors": []
+}

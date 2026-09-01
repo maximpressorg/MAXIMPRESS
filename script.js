@@ -104,3 +104,131 @@ if (reviewLightbox) {
   window.addEventListener("resize", hide);
   window.addEventListener("scroll", hide, { passive: true });
 })();
+
+
+// Version 10.5: reliable dropdown interaction + topic FAQ accordions
+(() => {
+  const dropdowns = [...document.querySelectorAll('.nav-dropdown')];
+  const desktop = () => window.innerWidth > 900;
+
+  const setOpen = (drop, open) => {
+    const toggle = drop.querySelector('.nav-dropdown-toggle');
+    drop.classList.toggle('open', open);
+    if (toggle) toggle.setAttribute('aria-expanded', String(open));
+  };
+
+  const resetState = (drop) => {
+    drop.dataset.pinned = 'false';
+    drop.dataset.suppressHover = 'false';
+  };
+
+  const closeDrop = (drop) => {
+    setOpen(drop, false);
+    resetState(drop);
+  };
+
+  const closeOthers = (except) => {
+    dropdowns.forEach((drop) => {
+      if (drop !== except) closeDrop(drop);
+    });
+  };
+
+  dropdowns.forEach((drop) => {
+    const toggle = drop.querySelector('.nav-dropdown-toggle');
+    if (!toggle) return;
+    resetState(drop);
+
+    toggle.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+
+      if (!desktop()) {
+        const willOpen = !drop.classList.contains('open');
+        closeOthers(drop);
+        setOpen(drop, willOpen);
+        return;
+      }
+
+      // On desktop the menu may already be open because of hover. The first
+      // click pins it open; the second click closes it even while the pointer
+      // is still over the control.
+      const pinned = drop.dataset.pinned === 'true';
+      if (pinned) {
+        drop.dataset.pinned = 'false';
+        drop.dataset.suppressHover = 'true';
+        setOpen(drop, false);
+      } else {
+        closeOthers(drop);
+        drop.dataset.pinned = 'true';
+        drop.dataset.suppressHover = 'false';
+        setOpen(drop, true);
+      }
+    });
+
+    drop.addEventListener('mouseenter', () => {
+      if (!desktop() || drop.dataset.suppressHover === 'true') return;
+      closeOthers(drop);
+      setOpen(drop, true);
+    });
+
+    drop.addEventListener('mouseleave', () => {
+      if (!desktop()) return;
+      drop.dataset.suppressHover = 'false';
+      if (drop.dataset.pinned !== 'true') setOpen(drop, false);
+    });
+  });
+
+  document.addEventListener('click', (event) => {
+    dropdowns.forEach((drop) => {
+      if (!drop.contains(event.target)) closeDrop(drop);
+    });
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') dropdowns.forEach(closeDrop);
+  });
+
+  window.addEventListener('resize', () => {
+    dropdowns.forEach(closeDrop);
+  });
+
+  document.querySelectorAll('.faq-question').forEach((button) => {
+    button.addEventListener('click', () => {
+      const item = button.closest('.faq-item');
+      if (!item) return;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach((openItem) => {
+        openItem.classList.remove('open');
+        const openButton = openItem.querySelector('.faq-question');
+        if (openButton) openButton.setAttribute('aria-expanded','false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        button.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+})();
+
+
+
+// Version 10.2: Articles mega-menu + nested mobile article categories.
+(() => {
+  document.querySelectorAll('.article-category-toggle').forEach((toggle) => {
+    toggle.addEventListener('click', (event) => {
+      if (window.innerWidth > 900) return;
+      event.preventDefault();
+      event.stopPropagation();
+      const group = toggle.closest('.article-menu-group');
+      if (!group) return;
+      const open = group.classList.toggle('subopen');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+  });
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) {
+      document.querySelectorAll('.article-menu-group.subopen').forEach(g => g.classList.remove('subopen'));
+      document.querySelectorAll('.article-category-toggle').forEach(b => b.setAttribute('aria-expanded','false'));
+    }
+  });
+})();

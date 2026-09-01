@@ -1,0 +1,23 @@
+{
+  "version": "10.3",
+  "html_files": 57,
+  "pages_with_primary_nav_checked": 46,
+  "main_navigation": [
+    "Home",
+    "Services",
+    "Articles",
+    "Portfolio"
+  ],
+  "portfolio_order": [
+    "Clients Reviews and Results",
+    "About Us",
+    "Contact Us",
+    "Privacy Policy"
+  ],
+  "homepage_main_unchanged": true,
+  "services_main_unchanged": true,
+  "local_links_checked": true,
+  "javascript_syntax": "passed (node --check)",
+  "issues": [],
+  "status": "PASS"
+}
