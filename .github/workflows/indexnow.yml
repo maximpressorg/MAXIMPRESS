@@ -1,0 +1,71 @@
+name: Notify IndexNow
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "docs/**"
+
+permissions:
+  contents: read
+
+jobs:
+  notify-indexnow:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out website
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Submit sitemap URLs to IndexNow
+        run: |
+          python - <<'PY'
+          import json
+          import urllib.request
+          import urllib.error
+          import xml.etree.ElementTree as ET
+
+          sitemap = "docs/sitemap.xml"
+          key = "7eb845f7625345c2a5248b86c8cd7226"
+          key_location = "https://maximpressorg.github.io/MAXIMPRESS/7eb845f7625345c2a5248b86c8cd7226.txt"
+
+          tree = ET.parse(sitemap)
+          root = tree.getroot()
+
+          namespace = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+
+          urls = [
+              loc.text.strip()
+              for loc in root.findall(".//sm:loc", namespace)
+              if loc.text
+          ]
+
+          payload = {
+              "host": "maximpressorg.github.io",
+              "key": key,
+              "keyLocation": key_location,
+              "urlList": urls
+          }
+
+          request = urllib.request.Request(
+              "https://api.indexnow.org/indexnow",
+              data=json.dumps(payload).encode("utf-8"),
+              headers={"Content-Type": "application/json; charset=utf-8"},
+              method="POST"
+          )
+
+          try:
+              with urllib.request.urlopen(request) as response:
+                  print("IndexNow response:", response.status)
+                  print("Submitted URLs:", len(urls))
+          except urllib.error.HTTPError as error:
+              print("IndexNow HTTP error:", error.code)
+              print(error.read().decode())
+              raise
+          PY
