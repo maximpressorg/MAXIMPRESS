@@ -1,0 +1,43 @@
+name: Maintain SEO sitemap
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+permissions:
+  contents: write
+
+jobs:
+  sitemap:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out website
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Regenerate sitemap from indexable HTML
+        run: python docs/scripts/generate_sitemap.py
+
+      - name: Commit sitemap only when it changed
+        run: |
+          if git diff --quiet -- docs/sitemap.xml; then
+            echo "Sitemap already current."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add docs/sitemap.xml
+          git commit -m "Update sitemap [skip ci]"
+          git push
