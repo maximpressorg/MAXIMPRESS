@@ -1,14 +1,14 @@
 # MaxImpress
 
-Official website: https://maximpress.pages.dev/
+Official website: https://maximpress.web.app/
 
 Version 11.13 is the current complete website. Its deployable files are in `site/`.
-Run `python scripts/package_cloudflare.py` and upload the resulting ZIP to the
-existing free Cloudflare Pages project. The original 27.85 MB portfolio video
-exceeds Cloudflare's 25 MiB per-file limit, so the package routes that one asset
-to the identical video on GitHub Pages. No page or video content is changed.
+Run `npx firebase-tools deploy --only hosting --project maximpress` to publish the
+verified site to Firebase Hosting. Firebase serves the original 27.85 MB portfolio
+video directly, so the primary website no longer needs a cross-host video route.
+No page or video content is changed.
 GitHub Pages publishes the same design and navigation as a secondary mirror, with
-noindex metadata to keep the Cloudflare homepage as the intended search result.
+noindex metadata to keep the Firebase homepage as the intended search result.
 
 The homepage alone is indexable at the primary address. All inner pages remain
 accessible through normal navigation and use noindex,follow. This reduces the
