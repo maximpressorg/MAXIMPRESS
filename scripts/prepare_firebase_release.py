@@ -7,9 +7,6 @@ import shutil
 from pathlib import Path
 
 
-OLD_ORIGIN = "https://maximpress.pages.dev"
-
-
 def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
@@ -30,16 +27,6 @@ def main() -> None:
     if output.exists():
         shutil.rmtree(output)
     shutil.copytree(source, public)
-
-    changed = []
-    for path in public.rglob("*"):
-        if not path.is_file() or path.suffix.lower() not in {".html", ".xml", ".txt"}:
-            continue
-        data = path.read_bytes()
-        revised = data.replace(OLD_ORIGIN.encode(), new_origin.encode())
-        if revised != data:
-            path.write_bytes(revised)
-            changed.append(path.relative_to(public).as_posix())
 
     firebase_config = {
         "hosting": {
@@ -69,15 +56,8 @@ def main() -> None:
     for relative in protected:
         src = (source / relative).read_text(encoding="utf-8")
         dst = (public / relative).read_text(encoding="utf-8")
-        if dst.replace(new_origin, OLD_ORIGIN) != src:
+        if dst != src:
             raise SystemExit(f"Unexpected content change in protected file: {relative}")
-
-    remaining = []
-    for path in public.rglob("*"):
-        if path.is_file() and OLD_ORIGIN.encode() in path.read_bytes():
-            remaining.append(path.relative_to(public).as_posix())
-    if remaining:
-        raise SystemExit(f"Old origin remains in: {remaining}")
 
     manifest = {
         "source": str(source),
@@ -85,7 +65,7 @@ def main() -> None:
         "project": args.project,
         "site": args.site,
         "fileCount": sum(1 for p in public.rglob("*") if p.is_file()),
-        "changedOnlyForOrigin": changed,
+        "contentChanges": [],
         "protectedHashes": {name: digest(public / name) for name in protected},
     }
     (output / "migration-manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
