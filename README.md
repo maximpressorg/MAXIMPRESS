@@ -3,7 +3,10 @@
 Official website: https://maximpress.pages.dev/
 
 Version 11.13 is the current complete website. Its deployable files are in `site/`.
-Upload the contents of that directory to the existing free Cloudflare Pages project.
+Run `python scripts/package_cloudflare.py` and upload the resulting ZIP to the
+existing free Cloudflare Pages project. The original 27.85 MB portfolio video
+exceeds Cloudflare's 25 MiB per-file limit, so the package routes that one asset
+to the identical video on GitHub Pages. No page or video content is changed.
 GitHub Pages publishes the same design and navigation as a secondary mirror, with
 noindex metadata to keep the Cloudflare homepage as the intended search result.
 
